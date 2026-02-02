@@ -64,6 +64,9 @@ export class SpaceMoltClient {
     }
 
     private handleMessage(msg: Message): void {
+        // Log all incoming server messages for introspection
+        console.error(`[Server -> Client] ${msg.type}:`, JSON.stringify(msg.payload));
+
         switch (msg.type) {
             case "logged_in": {
                 // deno-lint-ignore no-explicit-any
