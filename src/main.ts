@@ -3,7 +3,13 @@
 
 /**
  * SpaceMolt MCP Client
- * Entry point for the SpaceMolt game client with MCP interface.
+ * Entry point for SpaceMolt game client with MCP interface.
+ *
+ * Sandbox Permissions:
+ * - --allow-net: Required for WebSocket connection to game server
+ * - --allow-env: Required for SPACEMOLT_USERNAME and SPACEMOLT_TOKEN credentials
+ *
+ * This client uses stdio for MCP JSON-RPC, no filesystem access needed.
  */
 
 import { SpaceMoltClient } from "./client.ts";
