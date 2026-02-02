@@ -1,0 +1,14 @@
+name: DCO
+
+on:
+    pull_request:
+        types: [opened, edited, synchronize, reopened]
+
+jobs:
+    check:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check DCO
+              uses: command-line-arguments/dco-check-action@v1
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
