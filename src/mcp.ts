@@ -58,6 +58,38 @@ export class MCPServer {
                 this.sendResponse(id, this.client.getStatus());
                 break;
 
+            case "get_system":
+                this.executeCommand(id, "get_system", {});
+                break;
+
+            case "get_poi":
+                this.executeCommand(id, "get_poi", {});
+                break;
+
+            case "get_base":
+                this.executeCommand(id, "get_base", {});
+                break;
+
+            case "get_listings":
+                this.executeCommand(id, "get_listings", {});
+                break;
+
+            case "get_ship":
+                this.executeCommand(id, "get_ship", {});
+                break;
+
+            case "get_skills":
+                this.executeCommand(id, "get_skills", {});
+                break;
+
+            case "get_recipes":
+                this.executeCommand(id, "get_recipes", {});
+                break;
+
+            case "get_version":
+                this.executeCommand(id, "get_version", {});
+                break;
+
             case "mine":
                 this.executeCommand(id, "mine", {});
                 break;
@@ -119,7 +151,15 @@ export class MCPServer {
 
     private getToolDefinitions(): ToolDefinition[] {
         return [
-            { name: "get_status", description: "Get current game status (credits, ship, location, cargo)" },
+            { name: "get_status", description: "Get current player and ship status" },
+            { name: "get_system", description: "Get information about current star system" },
+            { name: "get_poi", description: "Get detailed info about current POI" },
+            { name: "get_base", description: "Get base/station information (must be docked)" },
+            { name: "get_listings", description: "View all market listings at current base (must be docked)" },
+            { name: "get_ship", description: "Get detailed ship information" },
+            { name: "get_skills", description: "Get all available skills" },
+            { name: "get_recipes", description: "Get available crafting recipes" },
+            { name: "get_version", description: "Get server version" },
             { name: "mine", description: "Mine ore at current asteroid belt" },
             { name: "dock", description: "Dock at current POI's base" },
             { name: "undock", description: "Undock from base" },
